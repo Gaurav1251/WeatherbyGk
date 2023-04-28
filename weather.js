@@ -221,6 +221,7 @@ function showError(error) {
 			break;
 		case error.POSITION_UNAVAILABLE:
 			alert("USer location information is unavailable.");
+			get("Delhi");
 			break;
 		case error.TIMEOUT:
 			alert("The request to get user location timed out.");
