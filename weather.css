@@ -117,14 +117,14 @@ span {
 
 @media screen and (max-width: 480px) {
     #body {
-        background-image: linear-gradient(to top right, #00008B, #2554C7, blue, green, yellow, orange, red);
+        background-image: linear-gradient(to top right, #5151ba, #274182, rgb(83, 83, 154), green, yellow, orange, red);
     }
 
     .display-4.fw-normal {
         /* background-image: linear-gradient(to bottom right,#157DEC,rgb(243, 243, 55),rgb(66, 54, 54)); */
         background-image: linear-gradient(to bottom, blue, black);
         color: yellow;
-        border: 1bpx black;
+        border: 1px black;
         border-radius: 12px;
         
     }
@@ -140,6 +140,45 @@ span {
      
         
     }
+    .card-body{
+        background-image: linear-gradient(to bottom,aqua,wheat,white,aqua);
+        color: black;
+    }
+    .card-header.py-3{
+       background-image:linear-gradient(to bottom,white,aqua,white); ;
+    }
+
+    .my-0.fw-normal.bg-light{
+        border-radius: 60px;
+        box-shadow: 1px 1px 8px 1px black;
+    }
+    #nav{
+        background-image: linear-gradient(to bottom right,white,rgb(133, 133, 212),white);
+    }
 
     
+}
+#h2{
+    background-image: linear-gradient(to bottom,blue,#00008c);
+    color: yellow;
+   
+    border-radius: 24px;
+}
+#cityname{
+    color: yellow;
+}
+.display-4.fw-normal{
+    border-radius: 24px;
+
+}
+.card-body{
+    background-image: linear-gradient(to top right,white,rgb(132, 219, 219),white);
+    color: black;
+    box-shadow: 1px 1px 8px 1px grey;
+    /* border-radius: 30px; */
+}
+.my-0.fw-normal.bg-light{
+    border-radius: 60px;
+    
+    box-shadow: 1px 1px 8px 1px black;
 }
