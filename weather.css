@@ -1,6 +1,6 @@
 #nav {
-    background-image: linear-gradient(to right, yellow,rgb(207, 137, 137), rgb(78, 29, 214));
-    
+    background-image: linear-gradient(to right, yellow, rgb(207, 137, 137), rgb(78, 29, 214));
+
     background-repeat: no-repeat;
     border-bottom: 1px black;
     font-weight: bolder;
@@ -13,24 +13,28 @@
 
 
 }
-div{
+
+div {
     width: auto;
 }
 
 
-h3{
+h3 {
     text-align: center;
 }
-.card-header.py-3{
-    width:auto;
-}
-#last{
-    margin-top: 0;
-    
 
-    
+.card-header.py-3 {
+    width: auto;
 }
-#web{
+
+#last {
+    margin-top: 0;
+
+
+
+}
+
+#web {
     background-color: blue;
     border-radius: 15px;
     color: yellow;
@@ -39,11 +43,13 @@ h3{
     width: 350px;
     text-align: center;
 }
-#web:hover{
+
+#web:hover {
     background-color: rgb(5, 5, 5);
     color: yellow;
 }
-.card.mb-4.rounded-3.shadow-sm{
+
+.card.mb-4.rounded-3.shadow-sm {
     height: auto;
     width: auto;
 }
@@ -51,15 +57,17 @@ h3{
 
 
 
-span{
-    
+span {
+
     padding-left: 10px;
     color: black;
     font-weight: 500;
 }
-#dt{
+
+#dt {
     text-decoration: none;
 }
+
 #btn {
     color: black;
     background-image: linear-gradient(to bottom, white, aqua);
@@ -80,16 +88,17 @@ span{
 }
 
 #body {
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-repeat: no-repeat;
-       
+
     width: 100%;
-    
-    background-image: linear-gradient(to top right,blue,rgb(132, 194, 194),yellow);
+
+    background-image: linear-gradient(to top right, blue, rgb(132, 194, 194), yellow);
     /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL6YUGrJf-AvRuiEjbtyyzgP5Z1B9DQK9EUQ&usqp=CAU"); */
-    
+
 }
-#days{
+
+#days {
     /* display:grid;
     grid-template-columns: max-content max-content max-content; */
     padding-left: 100px;
@@ -98,9 +107,39 @@ span{
     height: 100px;
     width: 100px;
 }
+
 /* // */
-.all{
+.all {
     width: 100%;
     height: 100%;
+
+}
+
+@media screen and (max-width: 480px) {
+    #body {
+        background-image: linear-gradient(to top right, #00008B, #2554C7, blue, green, yellow, orange, red);
+    }
+
+    .display-4.fw-normal {
+        /* background-image: linear-gradient(to bottom right,#157DEC,rgb(243, 243, 55),rgb(66, 54, 54)); */
+        background-image: linear-gradient(to bottom, blue, black);
+        color: yellow;
+        border: 1bpx black;
+        border-radius: 12px;
+        
+    }
     
+
+    #cityname {
+        color: yellow;
+        font-weight: 400;
+        
+        
+        
+        
+     
+        
+    }
+
+    .display-4.fw-normal:
 }
