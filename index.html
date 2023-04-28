@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="weather.css">
+  <link rel="icon" href="logo.png">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<body id="body">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" id="web" href="#">
+        <h3> Weather Forecast App</h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+
+
+
+
+        </ul>
+        <form class="d-flex">
+          <input id="city" class="form-control me-2" type="search" placeholder="Search City" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit" id="btn">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+<div class="all">
+  <div class="container">
+    <div class="container py-3">
+      <header>
+
+
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h2 class="display-4 fw-normal" style="box-shadow: 1px 1px 8px 0px yellowgreen; background-color: aqua;">
+            Weather for <span id="cityname" style="text-decoration: none;"></span></h2>
+
+
+        </div>
+      </header>
+
+      <main id="main">
+        <div class="row row-cols row-cols-md mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm ">
+              <div class="card-header py-3 ">
+                <h3 class="my-0 fw-normal bg-light">Current Weather</h3>
+              </div>
+              <div class="card-body">
+
+                <ul class="list-unstyled mt-3 mb-4 text-center" style=" padding-left: 20px; font-size: 20px;">
+                  <li><i class="fa-solid fa-cloud"></i> Weather Condition is : <span id="wc"></span></li>
+                  <li><i class="fa-solid fa-temperature-three-quarters"></i> Temperature is : <span
+                      id="temp"></span><sup>o</sup>C</li>
+                  <li><i class="fa-solid fa-droplet"></i> Humidity is : <span id="humi"></span> %</li>
+                  <li><i class="fa-solid fa-gauge fa-spin-pulse"></i> Wind Speed is : <span id="speed"></span> Km/hr
+                  </li>
+                  <li><i class="fa-regular fa-calendar-days"></i> Date and <i class="fa-solid fa-clock"></i> Time is :
+                    <span id="dt"></span>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm ">
+
+              <div class="card-body">
+
+
+                <canvas id="myCanvas" style="width:100%;max-width:600px;"></canvas>
+
+
+
+                </canvas>
+
+
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- <hr> -->
+        <!--  -->
+
+
+
+
+
+
+
+
+
+      </main>
+
+     
+    </div>
+  </div>
+
+  <hr>
+    <marquee behavior="scroll" direction="up" scrollamount="15" height="450">
+ 
+  
+    <div class="container" id="7days">
+      <div class="container py-3">
+        <header>
+
+
+          <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            
+              <h2 class="display-4 fw-normal text-center"
+                style="box-shadow: 1px 1px 8px 0px yellowgreen;margin-left: 175px ;background-color: aqua;text-align: center;width: max-content;">
+                Forecast Weather For Next 7 Days
+            
+            </h2>
+
+
+          </div>
+        </header>
+
+        <main id="main">
+          <div class="row row-cols-1 row-cols-md mb-3 text-center" id="alldays">
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm ">
+                <div class="card-header py-3 ">
+                  <h3 class="my-0 fw-normal bg-light" id="d1">Day 1 Weather</h3>
+                </div>
+                <div class="card-body">
+
+                  <ul class="list-unstyled mt-3 mb-4 text-center" style=" padding-left: 20px; font-size: 20px;">
+                    <li><i class="fa-solid fa-cloud"></i> Weather Condition is : <span id="day1"></span></li>
+                    <li><i class="fa-solid fa-temperature-three-quarters"></i> Temperature is : <span
+                        id="temp1"></span><sup>o</sup>C</li>
+                    <li><i class="fa-solid fa-droplet"></i> Humidity is : <span id="humi1"></span> %</li>
+                    <li><i class="fa-solid fa-gauge fa-spin-pulse"></i> Wind Speed is : <span id="speed1"></span> Km/hr
+                    </li>
+                    
+                  </ul>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm ">
+                <div class="card-header py-3 ">
+                  <h3 class="my-0 fw-normal bg-light" id="d2">Day 2 Weather</h3>
+                </div>
+                <div class="card-body">
+
+
+                  <ul class="list-unstyled mt-3 mb-4 text-center" style=" padding-left: 20px; font-size: 20px;">
+                    <li><i class="fa-solid fa-cloud"></i> Weather Condition is : <span id="day2"></span></li>
+                    <li><i class="fa-solid fa-temperature-three-quarters"></i> Temperature is : <span
+                        id="temp2"></span><sup>o</sup>C</li>
+                    <li><i class="fa-solid fa-droplet"></i> Humidity is : <span id="humi2"></span> %</li>
+                    <li><i class="fa-solid fa-gauge fa-spin-pulse"></i> Wind Speed is : <span id="speed2"></span> Km/hr
+                    </li>
+                    
+                  </ul>
+
+
+
+                </div>
+
+              </div>
+            </div>
+
+
+
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm ">
+                <div class="card-header py-3 ">
+                  <h3 class="my-0 fw-normal bg-light" id="d3">Day 3 Weather</h3>
+                </div>
+                <div class="card-body">
+
+                  <ul class="list-unstyled mt-3 mb-4 text-center" style=" padding-left: 20px; font-size: 20px;">
+                    <li><i class="fa-solid fa-cloud"></i> Weather Condition is : <span id="day3"></span></li>
+                    <li><i class="fa-solid fa-temperature-three-quarters"></i> Temperature is : <span
+                        id="temp3"></span><sup>o</sup>C</li>
+                    <li><i class="fa-solid fa-droplet"></i> Humidity is : <span id="humi3"></span> %</li>
+                    <li><i class="fa-solid fa-gauge fa-spin-pulse"></i> Wind Speed is : <span id="speed3"></span> Km/hr
+                    </li>
+                    
+                  </ul>
+
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm ">
+                <div class="card-header py-3 ">
+                  <h3 class="my-0 fw-normal bg-light" id="d4">Day 4 Weather</h3>
+                </div>
+                <div class="card-body">
+
+                  <ul class="list-unstyled mt-3 mb-4 text-center" style=" padding-left: 20px; font-size: 20px;">
+                    <li><i class="fa-solid fa-cloud"></i> Weather Condition is : <span id="day4"></span></li>
+                    <li><i class="fa-solid fa-temperature-three-quarters"></i> Temperature is : <span
+                        id="temp4"></span><sup>o</sup>C</li>
+                    <li><i class="fa-solid fa-droplet"></i> Humidity is : <span id="humi4"></span> %</li>
+                    <li><i class="fa-solid fa-gauge fa-spin-pulse"></i> Wind Speed is : <span id="speed4"></span> Km/hr
+                    </li>
+                    
+                  </ul>
+
+                </div>
+              </div>
+            </div>
+
+
+
+            
+
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm ">
+                <div class="card-header py-3 ">
+                  <h3 class="my-0 fw-normal bg-light" id="d5">Day 5 Weather</h3>
+                </div>
+                <div class="card-body">
+
+                  <ul class="list-unstyled mt-3 mb-4 text-center" style=" padding-left: 20px; font-size: 20px;">
+                    <li><i class="fa-solid fa-cloud"></i> Weather Condition is : <span id="day5"></span></li>
+                    <li><i class="fa-solid fa-temperature-three-quarters"></i> Temperature is : <span
+                        id="temp5"></span><sup>o</sup>C</li>
+                    <li><i class="fa-solid fa-droplet"></i> Humidity is : <span id="humi5"></span> %</li>
+                    <li><i class="fa-solid fa-gauge fa-spin-pulse"></i> Wind Speed is : <span id="speed5"></span> Km/hr
+                    </li>
+                    
+                  </ul>
+
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm ">
+                <div class="card-header py-3 ">
+                  <h3 class="my-0 fw-normal bg-light" id="d6">Day 6 Weather</h3>
+                </div>
+                <div class="card-body">
+
+
+                  <ul class="list-unstyled mt-3 mb-4 text-center" style=" padding-left: 20px; font-size: 20px;">
+                    <li><i class="fa-solid fa-cloud"></i> Weather Condition is : <span id="day6"></span></li>
+                    <li><i class="fa-solid fa-temperature-three-quarters"></i> Temperature is : <span
+                        id="temp6"></span><sup>o</sup>C</li>
+                    <li><i class="fa-solid fa-droplet"></i> Humidity is : <span id="humi6"></span> %</li>
+                    <li><i class="fa-solid fa-gauge fa-spin-pulse"></i> Wind Speed is : <span id="speed6"></span> Km/hr
+                    </li>
+                    
+                  </ul>
+
+
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </main>
+      </div>
+    </div>
+
+
+
+    <div class="container" id="last">
+      <div class="container py-3">
+
+
+        <main id="main">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm ">
+              <div class="card-header py-3 ">
+                <h3 class="my-0 fw-normal bg-light" id="d7">Day 7 Weather</h3>
+              </div>
+              <div class="card-body">
+
+
+                <ul class="list-unstyled mt-3 mb-4 text-center" style=" padding-left: 20px; font-size: 20px;">
+                  <li><i class="fa-solid fa-cloud"></i> Weather Condition is : <span id="day7"></span></li>
+                  <li><i class="fa-solid fa-temperature-three-quarters"></i> Temperature is : <span
+                      id="temp7"></span><sup>o</sup>C</li>
+                  <li><i class="fa-solid fa-droplet"></i> Humidity is : <span id="humi7"></span> %</li>
+                  <li><i class="fa-solid fa-gauge fa-spin-pulse"></i> Wind Speed is : <span id="speed7"></span> Km/hr
+                  </li>
+                  
+                </ul>
+
+
+
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+        </main>
+
+
+      </div>
+    </div>
+  </div>
+
+</marquee>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <!-- <script type="module" src="weather.js"></script>
+         -->
+  <script type="module" src="weather.js"></script>
+
+
+
+</body>
+
+</html>
