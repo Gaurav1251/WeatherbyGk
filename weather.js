@@ -7,7 +7,7 @@ const options = {
 		'X-RapidAPI-Host': 'geocoding-by-api-ninjas.p.rapidapi.com'
 	}
 };
-
+/*
 // //function to get current weather 
 // const getweather = (city) => {
 // 	try {
@@ -67,7 +67,7 @@ const options = {
 // 	}
 // }
 
-
+*/
 // getweather("delhi");
 btn.addEventListener("click", (e) => {
 	e.preventDefault();
