@@ -341,9 +341,63 @@ try{
 		temp7.innerHTML=response.days[7].temp;
 		speed7.innerHTML=response.days[7].windspeed;
 		humi7.innerHTML=response.days[7].humidity;
-
-
-
+		//
+		//for tb data
+		td1.innerHTML=response.days[1].datetime;
+		tday1.innerHTML=response.days[1].conditions;
+		ttemp1.innerHTML=response.days[1].temp;
+		tspeed1.innerHTML=response.days[1].windspeed;
+		thumi1.innerHTML=response.days[1].humidity;
+		Max_temp1.innerHTML=response.days[1].tempmax;
+		Min_temp1.innerHTML=response.days[1].tempmin;
+		//
+		td2.innerHTML=response.days[2].datetime;
+		tday2.innerHTML=response.days[2].conditions;
+		ttemp2.innerHTML=response.days[2].temp;
+		tspeed2.innerHTML=response.days[2].windspeed;
+		thumi2.innerHTML=response.days[2].humidity;
+		Max_temp2.innerHTML=response.days[2].tempmax;
+		Min_temp2.innerHTML=response.days[2].tempmin;
+		//
+		td3.innerHTML=response.days[3].datetime;
+		tday3.innerHTML=response.days[3].conditions;
+		ttemp3.innerHTML=response.days[3].temp;
+		tspeed3.innerHTML=response.days[3].windspeed;
+		thumi3.innerHTML=response.days[3].humidity;
+		Max_temp3.innerHTML=response.days[3].tempmax;
+		Min_temp3.innerHTML=response.days[3].tempmin;
+		//
+		td4.innerHTML=response.days[4].datetime;
+		tday4.innerHTML=response.days[4].conditions;
+		ttemp4.innerHTML=response.days[4].temp;
+		tspeed4.innerHTML=response.days[4].windspeed;
+		thumi4.innerHTML=response.days[4].humidity;
+		Max_temp4.innerHTML=response.days[4].tempmax;
+		Min_temp4.innerHTML=response.days[4].tempmin;
+		//
+		td5.innerHTML=response.days[5].datetime;
+		tday5.innerHTML=response.days[5].conditions;
+		ttemp5.innerHTML=response.days[5].temp;
+		tspeed5.innerHTML=response.days[5].windspeed;
+		thumi5.innerHTML=response.days[5].humidity;
+		Max_temp5.innerHTML=response.days[5].tempmax;
+		Min_temp5.innerHTML=response.days[5].tempmin;
+		//
+		td6.innerHTML=response.days[6].datetime;
+		tday6.innerHTML=response.days[6].conditions;
+		ttemp6.innerHTML=response.days[6].temp;
+		tspeed6.innerHTML=response.days[6].windspeed;
+		thumi6.innerHTML=response.days[6].humidity;
+		Max_temp6.innerHTML=response.days[6].tempmax;
+		Min_temp6.innerHTML=response.days[6].tempmin;
+		//
+		td7.innerHTML=response.days[7].datetime;
+		tday7.innerHTML=response.days[7].conditions;
+		ttemp7.innerHTML=response.days[7].temp;
+		tspeed7.innerHTML=response.days[7].windspeed;
+		thumi7.innerHTML=response.days[7].humidity;
+		Max_temp7.innerHTML=response.days[7].tempmax;
+		Min_temp7.innerHTML=response.days[7].tempmin;
 		draw(response.days[0].temp,response.days[0].humidity,response.days[0].windspeed);
 	})
 	

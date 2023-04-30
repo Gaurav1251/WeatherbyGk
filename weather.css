@@ -155,6 +155,8 @@ span {
     #nav{
         background-image: linear-gradient(to bottom right,white,rgb(133, 133, 212),white);
     }
+    /* // */
+    
 
     
 }
@@ -182,3 +184,26 @@ span {
     
     box-shadow: 1px 1px 8px 1px black;
 }
+thead tr        { 
+    height:60px;
+    background:rgb(212, 206, 207);
+    font-size:16px;
+  }
+thead tr:hover{ 
+    
+    background: yellow;
+    
+  }
+  tbody tr{
+    background-image: linear-gradient(to top right,aqua,wheat,white,aqua);
+    color: white;
+  }
+
+  tbody tr:hover{
+    background-image:linear-gradient(to top,rgb(97, 97, 255),rgb(163, 163, 253));
+    color: white;
+    text-transform: uppercase;
+    
+    
+  }
+  
